@@ -12,11 +12,12 @@ import {
   TextInput,
   LongTextInput,
   ReferenceField,
-  EditButton
+  EditButton,
+  Filter
 } from "react-admin";
 
 export const PostList = props => (
-  <List {...props}>
+  <List {...props} filters={<PostFilter />}>
     <Datagrid>
       <TextField source="id" />
       <ReferenceField source="userId" reference="users">
@@ -55,4 +56,13 @@ export const PostCreate = props => (
       <LongTextInput source="body" />
     </SimpleForm>
   </Create>
+);
+
+const PostFilter = props => (
+  <Filter {...props}>
+    <TextInput label="Search" source="q" alwaysOn />
+    <ReferenceInput label="User" source="userId" reference="users" allowEmpty>
+      <SelectInput optionText="name" />
+    </ReferenceInput>
+  </Filter>
 );

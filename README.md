@@ -1,3 +1,6 @@
+## React-Admin
+
+This is a basic admin app based on a existing REST API by [https://marmelab.com](https://marmelab.com/react-admin/Tutorial.html#adding-a-login-page)
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

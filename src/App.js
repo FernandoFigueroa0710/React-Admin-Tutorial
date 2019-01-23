@@ -6,12 +6,17 @@ import UserIcon from "@material-ui/icons/Group";
 import { UserList } from "./users";
 import { PostList, PostEdit, PostCreate } from "./posts";
 import Dashboard from "./Dashboard";
+import authProvider from "./authProvider";
 
 const dataProvider = jsonServerProvider("http://jsonplaceholder.typicode.com");
 
 const App = () => {
   return (
-    <Admin dashboard={Dashboard} dataProvider={dataProvider}>
+    <Admin
+      dashboard={Dashboard}
+      authProvider={authProvider}
+      dataProvider={dataProvider}
+    >
       <Resource
         name="posts"
         list={PostList}
